@@ -1,4 +1,144 @@
-= Document title
-:reproducible:
+= Design Document Template
+:author: Tristan-Mihai Radulescu
+:email: tristan-mihai.radulescu@etu.umontpellier.fr
+:date: 2025-03-05
+:revnumber: 1.0
+:revdate: 2025-03-05
+:icons: font
+:toc: macro
+:toclevels: 3
+:sectnums:
 
-zob test {author}
+toc::[]
+
+== Introduction
+
+
+=== Purpose
+
+
+=== Scope
+
+
+== Requirements
+
+
+=== Functional Requirements
+
+- Requirement 1
+- Requirement 2
+- ...
+
+=== Non-Functional Requirements
+
+- Performance
+- Scalability
+- Security
+- ...
+
+== Design Considerations
+
+
+=== Assumptions
+
+
+=== Constraints
+
+
+=== Dependencies
+
+
+== Architecture
+
+
+=== High-Level Architecture
+
+
+=== Domain Design
+
+
+==== Service 1
+
+- Description
+- Responsibilities
+- Interfaces
+
+==== Service 2
+
+- Description
+- Responsibilities
+- Interfaces
+
+== Data Model
+
+
+=== Entity-Relationship Diagram
+
+
+=== Data Flow
+
+
+== Interfaces
+
+
+=== API Design
+
+- Endpoints
+- Request/Response Formats
+- Error Handling
+
+=== User Interface
+
+- Wireframes
+- User Flows
+
+== Security
+
+
+=== Authentication
+
+- Methods
+- Token Management
+
+=== Authorization
+
+- Roles and Permissions
+- Access Control
+
+== Deployment
+
+Describe the deployment process and environment.
+
+=== Infrastructure
+
+- Servers
+- Networking
+
+=== Deployment Steps
+
+- Build
+- Release
+- Rollback
+
+== Maintenance
+
+Discuss considerations for maintaining the system.
+
+=== Monitoring
+
+- Tools
+- Metrics
+
+=== Logging
+
+- Strategy
+- Tools
+
+== Appendices
+
+
+=== Glossary
+
+
+=== References
+
