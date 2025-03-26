@@ -1,0 +1,9 @@
+export KC_HOSTNAME=keycloak.example.com
+export KEYCLOAK_ADMIN=admin
+export KEYCLOAK_ADMIN_PASSWORD=change_me
+export LDAP_ADMIN_USERNAME=admin
+export LDAP_ADMIN_PASSWORD=change_me
+export LDAP_ROOT=dc=example,dc=com
+export MARIADB_USER=keycloak
+export MARIADB_PASSWORD=change_me
+export MARIADB_DATABASE=keycloak

@@ -1,0 +1,61 @@
+version: '3.9'
+
+services:
+  db:
+    image: mariadb:10
+    environment:
+      MARIADB_RANDOM_ROOT_PASSWORD: yes
+      MARIADB_USER:                 ${MARIADB_USER}
+      MARIADB_PASSWORD:             ${MARIADB_PASSWORD}
+      MARIADB_DATABASE:             ${MARIADB_DATABASE}
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    command: start --optimized
+    container_name: keycloak
+    depends_on:
+      - db
+      - openldap
+    environment:
+      KC_HOSTNAME:             ${KC_HOSTNAME}
+      KC_PROXY:                edge
+      KEYCLOAK_ADMIN:          ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB:                   mariadb
+      KC_DB_URL_HOST:          db
+      KC_DB_URL_PORT:          3306
+      KC_DB_URL_DATABASE:      ${MARIADB_DATABASE}
+      KC_DB_USERNAME:          ${MARIADB_USER}
+      KC_DB_PASSWORD:          ${MARIADB_PASSWORD}
+    networks:
+      - default
+      - rp-network
+    #ports:
+    #  - 8080:8080
+    #  - 8443:8443
+    restart: unless-stopped
+  openldap:
+    image: bitnami/openldap:2.6-debian-10
+    environment:
+      LDAP_ALLOW_ANON_BINDING: no
+      LDAP_ADMIN_USERNAME:     ${LDAP_ADMIN_USERNAME}
+      LDAP_ADMIN_PASSWORD:     ${LDAP_ADMIN_PASSWORD}
+      LDAP_CUSTOM_LDIF_DIR:    /ldifs
+      #LDAP_USERS:             bob,tom
+      #LDAP_PASSWORDS:         password1, password2
+      LDAP_ROOT:               ${LDAP_ROOT}
+    restart: unless-stopped
+    volumes:
+      - ./ldifs:/ldifs:ro
+      - ldap:/bitnami/openldap
+
+networks:
+  rp-network:
+    name: rp-network
+    external: true
+
+volumes:
+  db:
+  ldap:
