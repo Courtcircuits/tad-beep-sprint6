@@ -1,3 +1,9 @@
+---
+id: References
+aliases: []
+tags: []
+---
+
 ## Service mesh
 https://chrishaessig.medium.com/keycloak-with-istio-and-oauth2-proxy-65227a383c15
 ## Keycloak
