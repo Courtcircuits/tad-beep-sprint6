@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "drafts/Q2.md",
+                "file": "tad.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Q2"
+              "title": "tad"
             }
           }
         ],
@@ -185,9 +185,11 @@
   },
   "active": "dcb0178837ffb87f",
   "lastOpenFiles": [
+    "tad-tmradulescu.pdf",
+    "tad.md~",
+    "drafts/Q2.md",
     "drafts/Q5.md",
     "drafts/Q6.md",
-    "drafts/Q2.md",
     "drafts/Q1.md",
     "drafts/draft.md",
     "pocs/keycloak/docker-compose.yml~",
